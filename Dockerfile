@@ -7,7 +7,7 @@ RUN \
 
 # Install OpenJDK7 and R
 RUN \
-  yum install -y java-1.7.0-openjdk-headless R
+  yum install -y java-1.8.0-openjdk-headless R
   
 #install additional tools and library prerequisites
 RUN \
