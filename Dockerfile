@@ -1,3 +1,5 @@
+FROM fedora:latest
+
 # Update System Image and install EPEL
 RUN \
   dnf update -y && \
