@@ -1,6 +1,6 @@
 FROM fedora:latest
 
-# Update System Image and install EPEL
+# Update System Image
 RUN \
   dnf update -y && \
   dnf upgrade -y
@@ -11,7 +11,7 @@ RUN \
   
 #install additional tools and library prerequisites
 RUN \
-  dnf install -y unzip netcdf-devel libxml2-devel ImageMagick graphviz cairo-devel libXt-devel 
+  dnf install -y unzip netcdf-devel libxml2-devel ImageMagick graphviz cairo-devel libXt-devel wget
   
 # Setup default cran repo
 RUN \
