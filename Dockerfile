@@ -1,6 +1,6 @@
 FROM mjmg/fedora-supervisor-base:latest
 
-# Install OpenJDK7 and R
+# Install OpenJDK8 and R
 RUN \
   dnf install -y java-1.8.0-openjdk-headless R
   
