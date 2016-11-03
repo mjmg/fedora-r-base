@@ -16,4 +16,5 @@ ADD \
   r-base.conf /etc/supervisor/conf.d/r-base.conf
 
 # default command
-CMD ["supervisord", "-c", "/etc/supervisor.conf"]
+#CMD ["supervisord", "-c", "/etc/supervisor.conf"]
+CMD ["/usr/bin/R"]
