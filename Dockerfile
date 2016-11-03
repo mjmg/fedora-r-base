@@ -1,9 +1,4 @@
-FROM fedora:latest
-
-# Update System Image
-RUN \
-  dnf update -y && \
-  dnf upgrade -y
+FROM mjmg/fedora-supervisor-base:latest
 
 # Install OpenJDK7 and R
 RUN \
@@ -11,10 +6,14 @@ RUN \
   
 #install additional tools and library prerequisites
 RUN \
-  dnf install -y unzip netcdf-devel libxml2-devel ImageMagick graphviz cairo-devel libXt-devel wget
+  dnf install -y netcdf-devel libxml2-devel ImageMagick graphviz cairo-devel libXt-devel
   
 # Setup default cran repo
 RUN \
   echo "r <- getOption('repos'); r['CRAN'] <- 'http://cran.us.r-project.org'; options(repos = r);" > ~/.Rprofile
+  
+ADD \
+  r-base.conf /etc/supervisor/conf.d/r-base.conf
 
-CMD "/bin/bash"
+# default command
+CMD ["supervisord", "-c", "/etc/supervisor.conf"]
