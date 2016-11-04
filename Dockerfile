@@ -8,8 +8,8 @@ RUN \
 RUN \
   echo "r <- getOption('repos'); r['CRAN'] <- 'http://cran.us.r-project.org'; options(repos = r);" > ~/.Rprofile
   
-ADD \
-  r-base.conf /etc/supervisor/conf.d/r-base.conf
+#ADD \
+#  r-base.conf /etc/supervisor/conf.d/r-base.conf
 
 # default command
 #CMD ["supervisord", "-c", "/etc/supervisor.conf"]
